@@ -1,4 +1,4 @@
-extends Node2D
+extends KinematicBody2D
 
 
 # Declare member variables here. Examples:
@@ -13,5 +13,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var texture = $Viewport.get_texture()
-	$CharacterObject/Sprite.texture = texture
+	move_and_collide(Vector2(1.5,1))
