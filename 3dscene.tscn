@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Models/12683_hand_v1_FINAL.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://3dscene.gd" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 1024, 512 )
+transparent_bg = true
+
+[node name="Spatial" type="Spatial" parent="Viewport"]
+
+[node name="MeshInstance" type="MeshInstance" parent="Viewport/Spatial"]
+transform = Transform( 0.0415268, 0, 0.999137, 0, 1, 0, -0.999137, 0, 0.0415268, 0.340556, 2.85494, 0.8928 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="Camera" type="Camera" parent="Viewport/Spatial/MeshInstance"]
+transform = Transform( -0.980739, 0.045453, 0.18996, 0.187328, 0.494274, 0.848882, -0.055308, 0.868117, -0.493269, 7.73612, 65.4536, -22.608 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
