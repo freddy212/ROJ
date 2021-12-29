@@ -14,4 +14,5 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var texture = $Viewport.get_texture()
-	$CharacterObject/Sprite.texture = texture
+	var sprite = get_parent().get_node("Character/Sprite")
+	sprite.texture = texture

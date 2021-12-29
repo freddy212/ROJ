@@ -1,12 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Base Mesh sculpt 2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://3dscene.gd" type="Script" id=2]
-[ext_resource path="res://icon.png" type="Texture" id=3]
-[ext_resource path="res://CharacterObject.gd" type="Script" id=4]
-
-[sub_resource type="CircleShape2D" id=1]
-radius = 27.3812
 
 [node name="3dsprite" type="Node2D"]
 script = ExtResource( 2 )
@@ -24,12 +19,3 @@ keep_aspect = 0
 current = true
 fov = 50.0
 far = 200.0
-
-[node name="CharacterObject" type="KinematicBody2D" parent="."]
-script = ExtResource( 4 )
-
-[node name="Sprite" type="Sprite" parent="CharacterObject"]
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterObject"]
-shape = SubResource( 1 )

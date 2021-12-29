@@ -13,8 +13,8 @@ func _on_Player_Entered(body:KinematicBody2D):
 		var sceneChangePath = "res://Locations/" + sceneToChange + ".tscn"
 		var scene = load(sceneChangePath) # Will load when parsing the script.
 		var node = scene.instance()
-		get_node("/root/World").call_deferred("add_child",node)
-		get_node("/root/World").call_deferred("move_child",node,0)
+		get_node("/root/OpeningScene").call_deferred("add_child",node)
+		get_node("/root/OpeningScene").call_deferred("move_child",node,0)
 		get_parent().queue_free()
 		body.position = playerPos		
 func correct_Direction(body):
@@ -31,7 +31,7 @@ func correct_Direction(body):
 	return result							
 	
 func _physics_process(delta):
-	var player = get_node("/root/World/Player")
+	var player = get_node("/root/OpeningScene/Player")
 	if(overlaps_body(player)):
 		_on_Player_Entered(player)		
 			
